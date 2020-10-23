@@ -10,11 +10,13 @@
 
 #include "swordfight.h"
 
-std::string Player::getWeapon() {
+using namespace std;
+
+string Player::getWeapon() {
 	return weaponType;
 }
 
-std::string Player::getItem() {
+string Player::getItem() {
 	return itemType;
 }
 
@@ -23,11 +25,11 @@ int Player::getPlayerHP() {
 }
 
 
-void Player::setWeapon(std::string weapon) {
+void Player::setWeapon(string weapon) {
 	weaponType = weapon;
 }
 
-void Player::setItem(std::string item) {
+void Player::setItem(string item) {
 	itemType = item;
 }
 
@@ -36,7 +38,7 @@ void Player::setPlayerHP(int HP) {
 }
 
 void Player::printPlayerInfo() {
-	std::cout << "You have " << getPlayerHP() << " left" << std::endl;
+	cout << "You have " << getPlayerHP() << " left" << endl;
 }
 
 int Enemy::getEnemyHP() {
@@ -48,5 +50,5 @@ void Enemy::setEnemyHP(int HP) {
 }
 
 void Enemy::printEnemyInfo() {
-	std::cout << "Enemy has " << getEnemyHP() << " left" << std::endl;
+	cout << "Enemy has " << getEnemyHP() << " left" << endl;
 }
