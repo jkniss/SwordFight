@@ -14,6 +14,7 @@
 #include <string>
 
 #include "swordfight.h"
+using namespace std;
 
 int main() {
 
@@ -22,10 +23,10 @@ int main() {
 	Enemy enemy1; // create instance of enemy object
 
 
-	std::string weaponChoice;
-	std::string enemyChoice;
-	std::string attackChoice;
-	std::string currentWeapon;
+	string weaponChoice;
+	string enemyChoice;
+	string attackChoice;
+	string currentWeapon;
 
 	// setting starting hit points for player and enemy
 	int startingHP = 200;
@@ -34,8 +35,8 @@ int main() {
 	int currentPlayerHP;
 
 
-	std::cout << "Please choose a weapon: Sword, Axe, Mace, Spear\n";
-	std::cin >> weaponChoice;
+	cout << "Please choose a weapon: Sword, Axe, Mace, Spear\n";
+	cin >> weaponChoice;
 
 	player1.setWeapon(weaponChoice);
 	player1.setPlayerHP(startingHP);
@@ -58,8 +59,8 @@ int main() {
 	}
 
 	while (player1.getPlayerHP() != 0) {
-		std::cout << "Type Attack to fight, Defense to block, or Switch to change weapons\n";
-		std::cin >> attackChoice;
+		cout << "Type Attack to fight, Defense to block, or Switch to change weapons\n";
+		cin >> attackChoice;
 		currentWeapon = player1.getWeapon();
 
 		if (attackChoice == "Attack" && currentWeapon == "Sword") {
@@ -112,7 +113,7 @@ int main() {
 		}
 		else if (attackChoice == "Defense") {
 			currentEnemyHP = enemy1.getEnemyHP();
-			std::cout << "The enemy has used an item to heal some HP!" << std::endl;
+			cout << "The enemy has used an item to heal some HP!" << endl;
 			currentEnemyHP = currentEnemyHP + 10;
 			enemy1.setEnemyHP(currentEnemyHP);
 
@@ -124,8 +125,8 @@ int main() {
 			enemy1.printEnemyInfo();
 		}
 		else if (attackChoice == "Switch") {
-			std::cout << "Please choose a weapon: Sword, Axe, Mace, Spear\n";
-			std::cin >> weaponChoice;
+			cout << "Please choose a weapon: Sword, Axe, Mace, Spear\n";
+			cin >> weaponChoice;
 
 			player1.setWeapon(weaponChoice);
 
@@ -146,11 +147,11 @@ int main() {
 			}
 		}
 		if (player1.getPlayerHP() == 0) {
-				std::cout << "Game over!!" << std::endl;
+				cout << "Game over!!" << endl;
 				break;
 		}
 		else if(enemy1.getEnemyHP() == 0) {
-				std::cout << "Congratulations, you've defeated your enemy!!" << std::endl;
+				cout << "Congratulations, you've defeated your enemy!!" << endl;
 				break;
 		}
 	}
