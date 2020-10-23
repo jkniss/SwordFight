@@ -112,7 +112,8 @@ int main() {
 		}
 		else if (attackChoice == "Defense") {
 			currentEnemyHP = enemy1.getEnemyHP();
-			currentEnemyHP = currentEnemyHP - 0;
+			std::cout << "The enemy has used an item to heal some HP!" << std::endl;
+			currentEnemyHP = currentEnemyHP + 10;
 			enemy1.setEnemyHP(currentEnemyHP);
 
 			currentPlayerHP = player1.getPlayerHP();
